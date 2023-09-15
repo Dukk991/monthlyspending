@@ -1,0 +1,36 @@
+/*Jos ostosten yhteissumma on alle 100€, saat alennusta ostoista 10%
+Jos ostosten yhteissumma on alle 300€, saat alennusta 15%
+Jos ostosten yhteissumma on alle 500€, saat alennusta 20%,
+muussa tapauksessa alennus on 25%. */
+
+#include <stdio.h>
+
+int main(){
+    
+    printf("Montako euroa olet käyttänyt ruokaostoksiin tänä kuuna?: ");
+    float moneyS, discountS, discountedPriceS;
+    scanf("%f", &moneyS);
+    
+    if (moneyS < 100) {
+        discountS = 10;
+    }
+    
+    else if (moneyS < 300) {
+         discountS = 15;
+    }
+    
+    else if (moneyS < 500) {
+         discountS = 20;
+    }
+    
+    else {
+        discountS = 25;
+    }
+    
+     discountedPriceS = moneyS - (moneyS * discountS/100);
+    
+    printf("Olet käyttänyt ruokaostoksiin tässä kuussa %.2f euroa ja saat ostoksistasi alennusta %.2f prosenttia alennusta. Ostoksiesi loppusumma on %.2f", moneyS, discountS, discountedPriceS);
+    
+    return 0;
+    
+}
